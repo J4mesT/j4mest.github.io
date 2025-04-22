@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.js": "/static/js/main.c8f0afb5.chunk.js",
-    "main.js.map": "/static/js/main.c8f0afb5.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/css/2.b0aab389.chunk.css": "/static/css/2.b0aab389.chunk.css",
-    "static/js/2.f1d56aec.chunk.js": "/static/js/2.f1d56aec.chunk.js",
-    "static/js/2.f1d56aec.chunk.js.map": "/static/js/2.f1d56aec.chunk.js.map",
+    "main.css": "/static/css/main.349d0a93.css",
+    "main.js": "/static/js/main.dea4084b.js",
+    "static/media/MyriadPro-Regular.woff": "/static/media/MyriadPro-Regular.79fc2b071abd0ab8a2db.woff",
+    "static/media/MyriadPro-Bold.woff": "/static/media/MyriadPro-Bold.f575c9d6861051ac5cff.woff",
+    "static/media/MyriadPro-Regular.woff2": "/static/media/MyriadPro-Regular.29976e7f43917234b6fd.woff2",
+    "static/media/MyriadPro-Bold.woff2": "/static/media/MyriadPro-Bold.257cd73db26d5adfd42c.woff2",
     "index.html": "/index.html",
-    "precache-manifest.495ceb90383b4852a524255be11d921d.js": "/precache-manifest.495ceb90383b4852a524255be11d921d.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.b0aab389.chunk.css.map": "/static/css/2.b0aab389.chunk.css.map"
-  }
+    "main.349d0a93.css.map": "/static/css/main.349d0a93.css.map",
+    "main.dea4084b.js.map": "/static/js/main.dea4084b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.349d0a93.css",
+    "static/js/main.dea4084b.js"
+  ]
 }
