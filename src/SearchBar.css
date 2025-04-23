@@ -1,0 +1,126 @@
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url('C:\Users\J8mes\my-homepage\public\fonts\MyriadPro-Regular.woff2') format('woff2'),
+         url('C:\Users\J8mes\my-homepage\public\fonts\MyriadPro-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  
+  @font-face {
+    font-family: 'Myriad Pro';
+    src: url('C:\Users\J8mes\my-homepage\public\fonts\MyriadPro-Bold.woff2') format('woff2'),
+         url('C:\Users\J8mes\my-homepage\public\fonts\MyriadPro-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  .search-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 1.5rem auto;
+    text-align: center;
+  }
+  
+  .search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(77, 77, 77, 0.95);
+    border-radius: 50px;
+    border: 1px solid #00000000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    padding: 4px;
+  }
+  
+  .search-wrapper:hover,
+  .search-wrapper:focus-within {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15), 0 0 8px rgba(29, 185, 84, 0.3);
+    border-color: #21212100;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  
+  .search-input {
+    flex: 1;
+    padding: 10px 10px 10px 40px;
+    font-size: 16px;
+    font-family: 'Myriad Pro', sans-serif;
+    border: none;
+    background: transparent;
+    outline: none;
+    color: #333;
+    border-radius: 50px 0 0 50px;
+  }
+  
+  .search-input::placeholder {
+    color: #999;
+    font-style: italic;
+    font-family: 'Myriad Pro', sans-serif;
+  }
+  
+  .search-input:focus {
+    color: #000;
+  }
+  
+  .search-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: bold;
+    background: #2c2c2c;
+    color: rgb(212, 212, 212);
+    border: none;
+    border-radius: 0 50px 50px 0;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .search-button:hover {
+    background: #272727;
+    transform: translateY(-1px);
+  }
+  
+  .search-button:active {
+    transform: translateY(0);
+  }
+  
+  @media (max-width: 768px) {
+    .search-container {
+      max-width: 90%;
+    }
+  
+    .search-wrapper {
+      flex-direction: row;
+    }
+  
+    .search-input {
+      font-size: 14px;
+      padding: 8px 8px 8px 36px;
+    }
+  
+    .search-button {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  
+    .search-icon {
+      width: 18px;
+      height: 18px;
+      left: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .search-button {
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+  }

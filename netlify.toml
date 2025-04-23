@@ -1,0 +1,16 @@
+# netlify.toml (at project root)
+
+[build]
+  command   = "npm run build"
+  publish   = "build"
+
+[functions]
+  directory = "netlify/functions"
+
+[dev]
+  # Tell netlify dev how to run your React app:
+  command    = "npm start"
+  # Port your React app runs on:
+  targetPort = 3000
+  # Port netlify dev itself will listen on:
+  port       = 8888

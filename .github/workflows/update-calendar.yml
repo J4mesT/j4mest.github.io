@@ -1,0 +1,23 @@
+name: Update Calendar ICS
+
+on:
+  workflow_dispatch:  # allows manual trigger
+
+jobs:
+  download-calendar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Download ICS file
+        run: |
+          curl -L "https://outlook.office365.com/owa/calendar/31941d49ba5446068f8d6e9f44174234@student.le.ac.uk/7ab362aa9f974df9b375a4fe05d3c40117474321622843054888/calendar.ics" -o public/calendar.ics
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/calendar.ics
+          git commit -m "Update calendar.ics"
+          git push

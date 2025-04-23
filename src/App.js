@@ -1,61 +1,119 @@
-import { useEffect, useState } from 'react';
-import { HashRouter as Router, Route, Routes } from 'react-router-dom';
-import axios from 'axios';
-import SpotifyLogin from './SpotifyLogin';
+import React from 'react';
+import NowPlaying from './NowPlaying';
+import Weather from './Weather';
+import SearchBar from './SearchBar';
+import ICSCalendar from './ICSCalendar'; // assuming you fixed the path
 
-const CLIENT_ID = 'fa95a427198e4d4790c0be1b9a5d994c'; // Replace with your actual client ID
-const CLIENT_SECRET = '5d7b1705beb44d3bbe0f1734ce757416'; // Replace with your actual client secret
-const REDIRECT_URI = 'https://j4mest.github.io/#/callback'; // Replace with your actual redirect URI
-
-function App() {
-  const [accessToken, setAccessToken] = useState(null);
-
-  // Handle the Spotify callback route
-  useEffect(() => {
-    const queryParams = new URLSearchParams(window.location.hash.split('?')[1]);
-    const code = queryParams.get('code');
-    if (code) {
-      // Exchange the authorization code for an access token
-      axios
-        .post(
-          'https://accounts.spotify.com/api/token',
-          new URLSearchParams({
-            grant_type: 'authorization_code',
-            code: code,
-            redirect_uri: REDIRECT_URI,
-          }),
-          {
-            headers: {
-              'Content-Type': 'application/x-www-form-urlencoded',
-              Authorization: `Basic ${btoa(CLIENT_ID + ':' + CLIENT_SECRET)}`, // Base64 encode the client ID and secret
-            },
-          }
-        )
-        .then((response) => {
-          setAccessToken(response.data.access_token); // Store the access token
-          window.history.replaceState({}, document.title, '/'); // Remove the code from URL
-        })
-        .catch((error) => console.error('Error fetching access token:', error));
-    }
-  }, []);
-
+export default function App() {
   return (
-    <Router>
-      <div>
-        <h1>Spotify Integration</h1>
-        {!accessToken ? (
-          <SpotifyLogin />
-        ) : (
-          <p>Logged in! Access Token: {accessToken}</p>
-        )}
+    <div
+      style={{
+        position: 'relative',
+        width: '100vw',
+        height: '100vh',
+        overflow: 'hidden',
+        backgroundImage: "url('/fonts/background.png')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        fontFamily: "'Outfit', sans-serif",
+      }}
+    >
+      {/* Google Font Link */}
+      <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap"
+        rel="stylesheet"
+      />
 
-        <Routes>
-          <Route path="/" element={<div>Welcome to the homepage!</div>} />
-          <Route path="/callback" element={<div>Handling the Spotify callback...</div>} />
-        </Routes>
+      <style>
+        {`
+          .component-container {
+            background: none; /* No background */
+            border-radius: 12px;
+            padding: 12px 20px;
+          }
+
+          .ok-brotato-text {
+            font-size: 5rem;
+            font-weight: 600;
+            color: #ffffffcc;
+            font-family: 'Outfit', sans-serif;
+            text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
+          }
+
+          .spotify-container {
+            background: rgba(255, 255, 255, 0); /* Transparent background with a hint of white */
+            backdrop-filter: blur(12px); /* Blur effect */
+            border-radius: 12px;
+            padding: 12px 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Slight shadow around the component */
+          }
+        `}
+      </style>
+
+      {/* Search Bar (center bottom) */}
+      <div
+        style={{
+          position: 'absolute',
+          top: '90%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+        }}
+        className="component-container"
+      >
+        <SearchBar />
       </div>
-    </Router>
+
+      {/* Now Playing (left center) with blur effect */}
+      <div
+        style={{
+          position: 'absolute',
+          top: '50%',
+          left: '20%',
+          transform: 'translateY(-50%)',
+        }}
+        className="spotify-container"
+      >
+        <NowPlaying />
+      </div>
+
+      {/* Calendar (bottom right) using ICSCalendar */}
+      <div
+        style={{
+          position: 'absolute',
+          bottom: '15%',
+          right: '1%',
+          maxWidth: 600,
+          overflowY: 'auto',
+        }}
+        className="spotify-container"
+      >
+        <ICSCalendar maxEvents={6} />
+      </div>
+
+      {/* "ok brotato" Text (middle right) */}
+      <div
+        style={{
+          position: 'absolute',
+          top: '50%',
+          right: '25%',
+          transform: 'translateY(-50%)',
+        }}
+      >
+        <div className="ok-brotato-text">brotato</div>
+      </div>
+
+      {/* Weather (top right) */}
+      <div
+        style={{
+          position: 'absolute',
+          top: 16,
+          right: '50%',
+        }}
+        className="component-container"
+      >
+        <Weather />
+      </div>
+    </div>
   );
 }
-
-export default App;
