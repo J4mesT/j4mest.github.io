@@ -1,0 +1,36 @@
+.App {
+  background: url('./assets/bg.png') no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  background: transparent;
+}
+
+.App-header {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-login,
+.btn-logout {
+  background: #1db954;
+  color: #fff;
+  padding: 0.5em 1em;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}

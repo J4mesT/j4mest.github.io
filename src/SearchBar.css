@@ -1,0 +1,32 @@
+/* Search bar container: positioned at top without affecting layout */
+.search-form {
+    position: absolute;
+    top: 10rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;            /* 80% viewport width */
+    max-width: 800px;      /* limit max width */
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Search input styling (full width) */
+  .search-input {
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    color: #9a9a9a;
+    background: rgba(86, 86, 86, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    -webkit-backdrop-filter: blur(10px);
+    border: none;
+    border-radius: 1rem;
+  }
+  
+  /* Input focus effect */
+  .search-input:focus {
+    opacity: 0.8;
+    outline: none;
+  }

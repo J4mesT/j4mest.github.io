@@ -1,0 +1,13 @@
+/* Reset margin and padding for html, body */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+    background: transparent; /* Ensures the background is transparent */
+  }
+  
+  #root {
+    height: 100%;
+  }
+  
