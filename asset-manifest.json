@@ -1,16 +1,14 @@
 {
   "files": {
-    "main.css": "/j4mest.github.io/static/css/main.8a69a9f0.css",
-    "main.js": "/j4mest.github.io/static/js/main.6a229e99.js",
-    "static/js/453.a3855040.chunk.js": "/j4mest.github.io/static/js/453.a3855040.chunk.js",
+    "main.css": "/j4mest.github.io/static/css/main.323c7435.css",
+    "main.js": "/j4mest.github.io/static/js/main.82d8a1e7.js",
     "static/media/bg.png": "/j4mest.github.io/static/media/bg.608824dad3dd0a057281.png",
     "index.html": "/j4mest.github.io/index.html",
-    "main.8a69a9f0.css.map": "/j4mest.github.io/static/css/main.8a69a9f0.css.map",
-    "main.6a229e99.js.map": "/j4mest.github.io/static/js/main.6a229e99.js.map",
-    "453.a3855040.chunk.js.map": "/j4mest.github.io/static/js/453.a3855040.chunk.js.map"
+    "main.323c7435.css.map": "/j4mest.github.io/static/css/main.323c7435.css.map",
+    "main.82d8a1e7.js.map": "/j4mest.github.io/static/js/main.82d8a1e7.js.map"
   },
   "entrypoints": [
-    "static/css/main.8a69a9f0.css",
-    "static/js/main.6a229e99.js"
+    "static/css/main.323c7435.css",
+    "static/js/main.82d8a1e7.js"
   ]
 }
